@@ -3,6 +3,10 @@
     package="com.smartco.app">
 
     <!--Permissions-->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <!--Application-->
@@ -40,7 +44,6 @@
         <activity android:name=".views.scan.ScanBarcodeActivity"
             android:label="ScanBarcodeActivity"
             android:parentActivityName=".views.stock.ShopStockActivity"
-            android:theme="@style/AppTheme.NoActionBar"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
