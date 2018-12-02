@@ -41,7 +41,7 @@ class ScanBarcodeActivity : AppCompatActivity() {
         val barcodeDetector: BarcodeDetector = BarcodeDetector.Builder(this).build()
         val cameraSource: CameraSource = CameraSource.Builder(this, barcodeDetector)
                 .setAutoFocusEnabled(true)
-                .setRequestedPreviewSize(1600, 1024)
+                .setRequestedPreviewSize(2220, 1080)
                 .build()
 
         val activityView = findViewById<View>(R.id.activity_scan_barcode)
