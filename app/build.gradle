@@ -4,13 +4,25 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+def kProps = rootProject.file("keystore.properties")
+def props = new Properties()
+props.load(new FileInputStream(kProps))
+
 android {
+    signingConfigs {
+        sign {
+            keyAlias props['keyAlias']
+            keyPassword props['keyPassword']
+            storeFile file(props['storeFile'])
+            storePassword props['storePassword']
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.smartco.app"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 1
+        versionCode 1812022107
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -18,12 +30,25 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sign
+        }
+        debug {
+            signingConfig signingConfigs.sign
         }
     }
     buildToolsVersion '28.0.3'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    flavorDimensions "version"
+    productFlavors {
+        idemo {
+            dimension "version"
+        }
+        irelease {
+            dimension "version"
+        }
     }
 }
 
@@ -37,7 +62,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     // MS App Center
     def appCenterSdkVersion = '1.10.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
