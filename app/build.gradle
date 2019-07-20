@@ -11,12 +11,10 @@ props.load(new FileInputStream(kProps))
 android {
     signingConfigs {
         sign {
-            if (!props.isEmpty()) {
-                keyAlias props['keyAlias']
-                keyPassword props['keyPassword']
-                storeFile file(props['storeFile'])
-                storePassword props['storePassword']
-            }
+            keyAlias props['keyAlias']
+            keyPassword props['keyPassword']
+            storeFile file(props['storeFile'])
+            storePassword props['storePassword']
         }
     }
     compileSdkVersion 27
@@ -69,6 +67,6 @@ dependencies {
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     // tests
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.0'
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.0'
 }
