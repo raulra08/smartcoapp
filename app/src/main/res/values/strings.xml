@@ -3,4 +3,5 @@
     <string name="button_start_control">Tomar Inventario</string>
     <string name="text_start_scanner">Scannear</string>
     <string name="title_activity_shop_stock">ShopStockActivity</string>
+    <string name="version">1.0.0</string>
 </resources>
