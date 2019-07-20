@@ -6,12 +6,12 @@ apply plugin: 'kotlin-android-extensions'
 
 def kProps = rootProject.file("keystore.properties")
 def props = new Properties()
+props.load(new FileInputStream(kProps))
 
 android {
     signingConfigs {
         sign {
-            if (propsFile.available()) {
-                props.load(new FileInputStream(kProps))
+            if (!props.isEmpty()) {
                 keyAlias props['keyAlias']
                 keyPassword props['keyPassword']
                 storeFile file(props['storeFile'])
