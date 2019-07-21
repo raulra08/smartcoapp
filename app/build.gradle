@@ -66,6 +66,14 @@ android {
             versionName '1.0'
         }
     }
+    testOptions {
+        unitTests {
+            all {
+                // Sets JVM argument(s) for the test JVM(s).
+                jvmArgs '-XX:MaxPermSize=512m'
+            }
+        }
+    }
 }
 
 dependencies {
