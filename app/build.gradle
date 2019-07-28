@@ -12,22 +12,9 @@ props.put("keyPassword", "\"${System.env.KEYPASSWORD}\"")
 props.put("storePassword", "\"${System.env.STOREPASSWORD}\"")
 
 android {
-    signingConfigs {
-        release {
-            keyAlias props["keyAlias"]
-            keyPassword props["keyPassword"]
-            storeFile file(props["storeFile"])
-            storePassword props["storePassword"]
-        }
-        debug {
-            keyAlias props["keyAlias"]
-            keyPassword props["keyPassword"]
-            storeFile file(props["storeFile"])
-            storePassword props["storePassword"]
-        }
-    }
 
     compileSdkVersion appSdkVersion
+
     defaultConfig {
         applicationId "com.smartco.app"
         minSdkVersion 16
@@ -36,22 +23,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            signingConfig signingConfigs.release
-        }
-        debug {
-            signingConfig signingConfigs.debug
-        }
-    }
+
     buildToolsVersion "29.0.0"
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     flavorDimensions "version"
+
     productFlavors {
         idemo {
             dimension "version"
@@ -68,6 +49,7 @@ android {
             versionName "1.0"
         }
     }
+
     testOptions {
         unitTests {
             all {

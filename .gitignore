@@ -12,3 +12,4 @@
 .externalNativeBuild
 app/release
 keystore.properties
+app/smartco.keystore
