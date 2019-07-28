@@ -1,8 +1,8 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
-apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android"
 
-apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-android-extensions"
 
 def appSdkVersion = 28
 def props = new Properties()
@@ -14,16 +14,16 @@ props.put("storePassword", "\"${System.env.STOREPASSWORD}\"")
 android {
     signingConfigs {
         release {
-            keyAlias props['keyAlias']
-            keyPassword props['keyPassword']
-            storeFile file(props['storeFile'])
-            storePassword props['storePassword']
+            keyAlias props["keyAlias"]
+            keyPassword props["keyPassword"]
+            storeFile file(props["storeFile"])
+            storePassword props["storePassword"]
         }
         debug {
-            keyAlias props['keyAlias']
-            keyPassword props['keyPassword']
-            storeFile file(props['storeFile'])
-            storePassword props['storePassword']
+            keyAlias props["keyAlias"]
+            keyPassword props["keyPassword"]
+            storeFile file(props["storeFile"])
+            storePassword props["storePassword"]
         }
     }
 
@@ -39,14 +39,14 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             signingConfig signingConfigs.release
         }
         debug {
             signingConfig signingConfigs.debug
         }
     }
-    buildToolsVersion '29.0.0'
+    buildToolsVersion "29.0.0"
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -56,42 +56,42 @@ android {
         idemo {
             dimension "version"
             targetSdkVersion appSdkVersion
-            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
             versionCode 1812022107
-            versionName '1.0'
+            versionName "1.0"
         }
         irelease {
             dimension "version"
             targetSdkVersion appSdkVersion
-            testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
             versionCode 1812022107
-            versionName '1.0'
+            versionName "1.0"
         }
     }
     testOptions {
         unitTests {
             all {
                 // Sets JVM argument(s) for the test JVM(s).
-                jvmArgs '-XX:MaxPermSize=512m'
+                jvmArgs "-XX:MaxPermSize=512m"
             }
         }
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ["*.jar"], dir: "libs")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.gms:play-services-vision:18.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "androidx.appcompat:appcompat:1.0.2"
+    implementation "com.google.android.gms:play-services-vision:18.0.0"
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+    implementation "com.google.android.material:material:1.0.0"
+    androidTestImplementation "androidx.test:runner:1.2.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
     // MS App Center
-    def appCenterSdkVersion = '1.10.0'
+    def appCenterSdkVersion = "1.10.0"
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     // tests
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.0'
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.4.0"
 }
