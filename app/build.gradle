@@ -58,6 +58,12 @@ android {
             }
         }
     }
+
+    task testRelease {
+        doLast {
+            throw new RuntimeException('broken')
+        }
+    }
 }
 
 dependencies {
