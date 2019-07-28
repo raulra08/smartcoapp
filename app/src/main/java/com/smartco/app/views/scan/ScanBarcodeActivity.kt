@@ -4,9 +4,9 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v4.app.ActivityCompat
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import androidx.core.app.ActivityCompat
+import androidx.appcompat.app.AppCompatActivity
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.View
@@ -19,7 +19,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 import com.smartco.app.R
 import com.smartco.app.utils.Constants.EXTRA_BARCODE_RESULT_KEY
 import java.io.IOException
-import android.support.annotation.NonNull
+import androidx.annotation.NonNull
 
 
 
