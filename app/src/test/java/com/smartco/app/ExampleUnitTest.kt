@@ -1,8 +1,8 @@
 package com.smartco.app
 
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers.equalTo
 import org.junit.jupiter.api.Test
-
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test
 class ExampleUnitTest {
     @Test
     fun `testing that junit5 is my test framework`() {
-        assertEquals(4, 2 + 2)
+
+        assertThat(4, equalTo(2 + 2))
     }
 }

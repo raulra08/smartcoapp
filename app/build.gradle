@@ -1,7 +1,5 @@
 apply plugin: "com.android.application"
-
 apply plugin: "kotlin-android"
-
 apply plugin: "kotlin-android-extensions"
 
 def appSdkVersion = 28
@@ -80,4 +78,5 @@ dependencies {
     // tests
     testImplementation "junit:junit:4.12"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.4.0"
+    testImplementation 'org.hamcrest:hamcrest:2.1'
 }
