@@ -80,6 +80,9 @@ dependencies {
     implementation "com.google.android.material:material:1.0.0"
     androidTestImplementation "androidx.test:runner:1.2.0"
     androidTestImplementation "androidx.test.espresso:espresso-core:" + rootProject.espressoVersion
+    androidTestImplementation 'androidx.test:core-ktx:' + rootProject.androidxTestCore
+    androidTestImplementation 'androidx.test.ext:junit:' + rootProject.androidxTestextJUnit
+    androidTestImplementation 'androidx.test.ext:junit-ktx:' + rootProject.androidxTestextJUnit
     // MS App Center
     def appCenterSdkVersion = "1.10.0"
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
@@ -90,9 +93,5 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
     testImplementation "org.hamcrest:hamcrest:2.1"
     testImplementation "org.mockito:mockito-core:3.0.0"
-    testImplementation "androidx.test:core-ktx:" + rootProject.androidxTestCore;
-    testImplementation 'androidx.test.ext:junit-ktx:' + rootProject.androidxTestextJUnit
     testImplementation 'androidx.test.ext:truth:' + rootProject.androidxTestextTruth
-
 }
-
