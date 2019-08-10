@@ -2,11 +2,11 @@ package com.smartco.app.views.stock
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.barcode.Barcode
+import com.google.android.material.snackbar.Snackbar
 import com.smartco.app.R
 import com.smartco.app.utils.Constants
 import com.smartco.app.views.scan.ScanBarcodeActivity
